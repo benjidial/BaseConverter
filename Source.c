@@ -30,7 +30,7 @@ SOFTWARE.
 /* * * * * * * * *
  * BaseConverter *
  * by Benji Dial *
- * Beta v0.1.0-a *
+ * Beta v0.1.0-b *
  * * * * * * * * */
 
 enum exitcodes
@@ -47,6 +47,7 @@ enum exitcodes
 void help(char *name)
 {
   printf("Help for %s\n", name);
+  printf("Command Line:\n");
   printf("  %s dec base [digits [decimalpoint]]\n", name);
   printf("  %s --help\n\n", name);
   printf("  --help  Outputs this help text.\n");
@@ -56,7 +57,20 @@ void help(char *name)
   printf("          If not supplied, the following will be used:\n");
   printf("          0123456789abcdefghijklmnopqrstuvwxyz\n");
   printf("  decimalpoint  This goes after the unit digit.\n");
-  printf("                If not specified, '.' is used.\n");
+  printf("                If not specified, '.' is used.\n\n");
+  printf("  Examples:\n");
+  printf("    %s 1729 6\n", name);
+  printf("    %s 42 16\n", name);
+  printf("    %s 10 2 O|\n", name);
+  printf("    %s 126 12 0123456789XE ;\n\n\n", name);
+  printf("Return Values:\n");
+  printf("  0   OK\n");
+  printf("  1   No Arguments\n");
+  printf("  2   Invalid Arguments\n");
+  printf("  3   Base Too Large For Automatic Digits\n");
+  printf("  4   Not Enough Digits For Base\n");
+  printf("  5   Couldn't Allocate Memory For Digits\n");
+  printf("  6   Couldn't Allocate Memory For Output\n");
 }
 
 int main(int argc, char *argv[])
