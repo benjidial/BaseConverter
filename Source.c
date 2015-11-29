@@ -30,7 +30,7 @@ SOFTWARE.
 /* * * * * * * * *
  * BaseConverter *
  * by Benji Dial *
- * Beta v0.1.0-b *
+ * Beta v0.1.0-c *
  * * * * * * * * */
 
 enum exitcodes
@@ -43,10 +43,11 @@ enum exitcodes
   NO_MEM_DIGITS,
   NO_MEM_OUTPUT
 };
+#define VERSION "v0.1.0-c"
 
 void help(char *name)
 {
-  printf("Help for %s\n", name);
+  printf("Help for %s, %s\n", name, VERSION);
   printf("Command Line:\n");
   printf("  %s dec base [digits [decimalpoint]]\n", name);
   printf("  %s --help\n\n", name);
