@@ -30,7 +30,7 @@ SOFTWARE.
 /* * * * * * * * *
  * BaseConverter *
  * by Benji Dial *
- * Beta v0.1.0-c *
+ * Beta v0.1.0-d *
  * * * * * * * * */
 
 enum exitcodes
@@ -43,7 +43,7 @@ enum exitcodes
   NO_MEM_DIGITS,
   NO_MEM_OUTPUT
 };
-#define VERSION "v0.1.0-c"
+#define VERSION "v0.1.0-d"
 
 void help(char *name)
 {
@@ -153,7 +153,7 @@ int main(int argc, char *argv[])
   long intpart = floor(dec);
   dec -= floor(dec);
   int power;
-  for (power = ceil(log(intpart) / log(base)); power--; power >= 0)
+  for (power = floor(log(intpart) / log(base) + 1); power--; power >= 0)
   {
     output[pos] = digits[(int)floor(intpart / pow(base, power))];
     pos++;
